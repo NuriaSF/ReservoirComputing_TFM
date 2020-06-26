@@ -7,7 +7,6 @@ _Reservoir computing (RC)_ is a learning technique used to infer the underlying 
 <center>
 <figure class="image">
 <img src="Images/EchoStateBasic.png" alt="EchoStateBasic" width="300"/>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 <img src="Images/EchoStateBasic2.png" alt="EchoStateBasic" width="300"/>
 <figcaption>Topology of the neural network employed by the reservoir computing framework. The left image depicts the general structure whereas the right one illustrates a particular realization of the left one.</figcaption>
 </figure>
