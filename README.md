@@ -4,13 +4,11 @@ This project is the result of the Final Thesis of the Master's Degree in the _Fu
 
 _Reservoir computing (RC)_ is a learning technique used to infer the underlying dynamics given a set of sequential data points. For instance, it may learn the dynamics of an input sequence in order to produce a related output sequence or it may learn the dynamics of a certain data in order to be capable of predicting the following time steps. The neural network employed is composed by a single hidden layer along with an input and output layers. All the connections between these three elements are allowed, although it is usually enough to regard connections between the input and the hidder layer (<img src="https://render.githubusercontent.com/render/math?math=W^\text{in}">), the hidden layer and the output (<img src="https://render.githubusercontent.com/render/math?math=W^\text{out}">), the hidden layer with itself (_W_) and the output with the hidden layer (<img src="https://render.githubusercontent.com/render/math?math=W^\text{back}">).
 
-<center>
 <figure class="image">
 <img src="Images/EchoStateBasic.png" alt="EchoStateBasic" width="200"/>
 <img src="Images/EchoStateBasic2.png" alt="EchoStateBasic" width="200"/>
 <figcaption>Topology of the neural network employed by the reservoir computing framework. The left image depicts the general structure whereas the right one illustrates a particular realization of the left one.</figcaption>
 </figure>
-</center>
 
 As we will see, reservoir computing is a recurrent neural network approach but with the main difference that it deterministically sets all the connections within the different components of the network (<img src="https://render.githubusercontent.com/render/math?math=W^\text{in}">,_W_,<img src="https://render.githubusercontent.com/render/math?math=W^\text{back}">) with the exception of the output connections (<img src="https://render.githubusercontent.com/render/math?math=W^\text{out}">), since these will be the connections to be learnt. This is possible because of the so called _echo states_, which is the key concept behind the reservoir computing approach. Therefore, reservoir computing needs to learn a much lower number of parameters, which makes it computationally cheaper than other RNN approaches. However, this is not the only difference. As we will see, the learning procedure consists on performing a linear regression, which is less costly than the usual backpropagation.
 
