@@ -4,15 +4,18 @@ This project is the result of the Final Thesis of the Master's Degree in the _Fu
 
 _Reservoir computing (RC)_ is a learning technique used to infer the underlying dynamics given a set of sequential data points. For instance, it may learn the dynamics of an input sequence in order to produce a related output sequence or it may learn the dynamics of a certain data in order to be capable of predicting the following time steps. The neural network employed is composed by a single hidden layer along with an input and output layers. All the connections between these three elements are allowed, although it is usually enough to regard connections between the input and the hidder layer (<img src="https://render.githubusercontent.com/render/math?math=W^\text{in}">), the hidden layer and the output (<img src="https://render.githubusercontent.com/render/math?math=W^\text{out}">), the hidden layer with itself (_W_) and the output with the hidden layer (<img src="https://render.githubusercontent.com/render/math?math=W^\text{back}">).
 
-<figure class="image">
-<img src="Images/EchoStateBasic.png" alt="EchoStateBasic" width="200"/>
-<img src="Images/EchoStateBasic2.png" alt="EchoStateBasic" width="200"/>
-<figcaption>Topology of the neural network employed by the reservoir computing framework. The left image depicts the general structure whereas the right one illustrates a particular realization of the left one.</figcaption>
-</figure>
-
+<p>
+    <img src="Images/EchoStateBasic.png" width="350"/> 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="Images/EchoStateBasic2.png" width="350" />
+    <br>
+    <em>Fig. 1: Topology of the neural network employed by the reservoir computing framework. The left image depicts the general structure whereas the right one illustrates a particular realization of the left one.</em>
+</p>
+  
 As we will see, reservoir computing is a recurrent neural network approach but with the main difference that it deterministically sets all the connections within the different components of the network (<img src="https://render.githubusercontent.com/render/math?math=W^\text{in}">,_W_,<img src="https://render.githubusercontent.com/render/math?math=W^\text{back}">) with the exception of the output connections (<img src="https://render.githubusercontent.com/render/math?math=W^\text{out}">), since these will be the connections to be learnt. This is possible because of the so called _echo states_, which is the key concept behind the reservoir computing approach. Therefore, reservoir computing needs to learn a much lower number of parameters, which makes it computationally cheaper than other RNN approaches. However, this is not the only difference. As we will see, the learning procedure consists on performing a linear regression, which is less costly than the usual backpropagation.
 
-The reservoir computing technique has recently gained a lot of popularity thanks to the work of chaos theorist Edward Ott and four collaborators at the University of Maryland in the area of chaotic dynamical systems (\cite{PhysRevLett} and \cite{ChaosMag}). In that work, they were able to predict the dynamics of some chaotic systems up to 8 Lyapunov times, which is an impressive distant horizon. Notice that the network was trained solely based on past data, thus no knowledge requiring the model generating such dynamics was required. The prediction of chaotic dynamics based solely on past data may have a wide range of applications: monitor the heartbeat in order to prevent a heart attack, keep track of a sea's swell in order to predict rough waves that may endanger a ship and its crew, track solar flares in order to predict solar storms that would severely damage Earth's electronic infrastructure and whether forecasting among others.
+The reservoir computing technique has recently gained a lot of popularity thanks to the work of chaos theorist Edward Ott and four collaborators at the University of Maryland in the area of chaotic dynamical systems ([[2]](#2) and [[3]](#3)). In that work, they were able to predict the dynamics of some chaotic systems up to 8 Lyapunov times, which is an impressive distant horizon. Notice that the network was trained solely based on past data, thus no knowledge requiring the model generating such dynamics was required. The prediction of chaotic dynamics based solely on past data may have a wide range of applications: monitor the heartbeat in order to prevent a heart attack, keep track of a sea's swell in order to predict rough waves that may endanger a ship and its crew, track solar flares in order to predict solar storms that would severely damage Earth's electronic infrastructure and whether forecasting among others.
 
 The main goal of the project is to understand the mechanism behind the _reservoir computing (RC)_ technique as well as its implementation in the task of learning a dynamics in order to predict the following time steps. We will deal with chaotic and non-chaotic dynamics.
 
@@ -43,3 +46,21 @@ Report of the final thesis in pdf format.
 
 #### Webs folder
 This folder contains the web pages appearing in the bibliography of the report printed in pdf. Therefore, they can still be consulted in case they get removed from the web.
+
+## References
+<a id="1">[1]</a> 
+Jaeger, Herbert. (2010). 
+The "echo state" approach to analysing and training recurrent neural networks-with an erratum note.  
+Bonn, Germany: German National Research Center for Information Technology GMD Technical Report, 148.
+
+<a id="2">[2]</a> 
+Pathak, Jaideep and Hunt, Brian and Girvan, Michelle and Lu, Zhixin and Ott, Edward (2018). 
+Model-Free Prediction of Large Spatiotemporally Chaotic Systems from Data: A Reservoir Computing Approach. 
+Phys. Rev. Lett., 120(2).
+
+<a id="3">[3]</a> 
+Pathak, Jaideep and Lu, Zhixin and Hunt, Brian R. and Girvan, Michelle and Ott, Edward (2017). 
+Using machine learning to replicate chaotic attractors and calculate Lyapunov exponents from data.
+Chaos: An Interdisciplinary Journal of Nonlinear Science, 27(12).
+
+
