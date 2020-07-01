@@ -1,4 +1,4 @@
-# Reservoir computing for learning the underlying dynamics of sequential data
+# Reservoir computing for learning the underlying dynamics of sequential data points
 
 This project is the result of the Final Thesis of the Master's Degree in the _Fundamental Principles of Data Science_, at the University of Barcelona, supervised by Dr. Oriol Pujol.
 
